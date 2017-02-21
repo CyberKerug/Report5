@@ -1,11 +1,18 @@
 package jp.ac.uryukyu.ie.e165735;
 
+import static com.sun.corba.se.impl.util.Utility.printStackTrace;
+
 public class StrError {
     public static void main(String[] args) {
-        String str;
-        str = null;
-        int l;
-        l = str.length();
-        System.out.println("strに格納されている文字は" + l + "文字です。");
+        try {
+            String str;
+            str = null;
+            int l;
+            l = str.length();
+            System.out.println("strに格納されている文字は" + l + "文字です。");
+        }catch (NullPointerException e) {
+            System.out.println("NullPointerExceptionが発生したため、\n strには何も格納されていません。");
+            printStackTrace();
+        }
     }
 }
